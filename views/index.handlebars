@@ -1,0 +1,41 @@
+<div class = "container">
+    <h1 class = "eatburger">
+        Eat the Burger
+    </h1>
+    <p class = "burgerNumber">
+        Keep Track of How many burgers you have eaten.
+    </p>
+    <form action = "/burgers/create" method = "POST">
+        <div class = "form-group">
+            <input class="form-control" name="burger" type="text" placeholder="Burger"></input>
+            <br>
+            <button type="submit" class="btn btn-success">Add Burger</button>
+        </div>
+    </form>
+</div>
+
+<div class = "container text-center">
+    <div class = "row">
+        <div class = "col">
+            <h2>Uneaten Burgers</h2>
+            {{#each burger}}
+            {{#unless devoured}}
+            <div class = "new">
+                <button type = "button" class = "btn btn-secondary" data-id = "{{id}}" data-devoured = "{{devoured}}">{{name}}</button>
+            </div>
+            {{/unless}}
+            {{/each}}
+        </div>
+       <div class = "col">
+           <h2>Eaten Burgers</h2>
+           {{#each burger}}
+           {{#if devoured}}
+           <div class = "new">
+                <button type = "button" class = "btn btn-success">{{name}}</button>
+            </div>
+            {{/if}}
+            {{/each}}
+       </div>
+
+    </div>
+</div>
