@@ -1,4 +1,4 @@
-<div class = "container">
+<div class = "container text-center">
     <h1 class = "eatburger">
         Eat the Burger
     </h1>
@@ -18,20 +18,29 @@
     <div class = "row">
         <div class = "col">
             <h2>Uneaten Burgers</h2>
-            {{#each burger}}
-            {{#unless devoured}}
-            <div class = "new">
-                <button type = "button" class = "btn btn-secondary" data-id = "{{id}}" data-devoured = "{{devoured}}">{{name}}</button>
+            <h3>Click on Burger to eat it</h3>
+            {{#each burgerData}}
+            {{#unless this.devoured}}
+            <div class = "col text-center">
+                <form>
+                    <div class = "form-group">
+                        <button type = "submit" class="btn btn-primary" value = {{this.id}}>{{this.id}}. {{this.burger_name}}</button>
+                    </div>
+                </form> 
             </div>
             {{/unless}}
             {{/each}}
         </div>
        <div class = "col">
            <h2>Eaten Burgers</h2>
-           {{#each burger}}
+           {{#each burgerData}}
            {{#if devoured}}
            <div class = "new">
-                <button type = "button" class = "btn btn-success">{{name}}</button>
+               <form>
+                   <div class = "form-group">
+                <button type = "button" class = "btn btn-success">{{this.burger_name}}</button>
+                </div>
+                </form>
             </div>
             {{/if}}
             {{/each}}
