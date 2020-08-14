@@ -6,7 +6,7 @@ router.get("/", function(req,res){
     res.redirect("/burgers")
 });
 router.post("/burgers/create",function(req,res){
-    burger.create(req.body.burger, function(result){
+    burger.create(req.body.name, function(result){
         res.redirect("/burgers");
     });
 });
