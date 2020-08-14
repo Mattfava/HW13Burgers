@@ -1,8 +1,8 @@
 {
   "name": "node_what_todo",
   "version": "1.0.0",
-  "engines":{
-    "node":"12.18.3"
+  "engines": {
+    "node": "12.18.3"
   },
   "description": "-Node \r -Express \r -MySQL \r -Handlebars \r -Jquery",
   "main": "server.js",
@@ -16,7 +16,8 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "handlebars": "^4.7.6",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "pg": "^8.3.0"
   },
   "devDependencies": {}
 }
